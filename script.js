@@ -392,7 +392,7 @@ async function handleFormSubmit(e) {
 
     const formData = new FormData(elements.rsvpForm);
     const data = Object.fromEntries(formData.entries());
-    data.plus_one = elements.rsvpForm.plus_one.checked ? "Yes" : "No";
+    data.plus_one = elements.rsvpForm.plus_one.checked; // Send boolean true/false
 
     elements.submitBtn.disabled = true;
     elements.submitBtn.textContent = '...';
