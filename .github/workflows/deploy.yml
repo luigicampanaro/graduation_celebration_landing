@@ -26,7 +26,7 @@ jobs:
 
       - name: Inject Secrets
         run: |
-          sed -i 's|$$SECURE_GOOGLE_SHEET_ENDPOINT$$|${{ secrets.GOOGLE_SHEET_ENDPOINT }}|g' script.js
+          sed -i 's|PLACEHOLDER_GOOGLE_SHEET_ENDPOINT|${{ secrets.GOOGLE_SHEET_ENDPOINT }}|g' script.js
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
