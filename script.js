@@ -405,18 +405,43 @@ async function handleFormSubmit(e) {
             body: JSON.stringify(data)
         });
 
-        elements.formStatus.textContent = currentLang === 'it' ? 'Grazie.' : 'Thank you.';
+        // Success confirmation
+        const successMessage = currentLang === 'it'
+            ? '✓ Confermato! La tua partecipazione è stata registrata con successo.'
+            : '✓ Confirmed! Your attendance has been successfully registered.';
+
+        elements.formStatus.textContent = successMessage;
         elements.formStatus.style.color = '#c0a062';
+        elements.formStatus.style.fontSize = '1.1rem';
+        elements.formStatus.style.fontWeight = '500';
+        elements.formStatus.style.padding = '1.5rem';
+        elements.formStatus.style.marginTop = '2rem';
+        elements.formStatus.style.border = '1px solid #c0a062';
+        elements.formStatus.style.borderRadius = '4px';
+        elements.formStatus.style.background = 'rgba(192, 160, 98, 0.1)';
+        elements.formStatus.style.textAlign = 'center';
+
         elements.rsvpForm.reset();
 
     } catch (error) {
         console.error("Submission error:", error);
-        elements.formStatus.textContent = 'Error.';
-        elements.formStatus.style.color = 'red';
+        const errorMessage = currentLang === 'it'
+            ? '✗ Errore. Si prega di riprovare.'
+            : '✗ Error. Please try again.';
+        elements.formStatus.textContent = errorMessage;
+        elements.formStatus.style.color = '#ff6b6b';
+        elements.formStatus.style.fontSize = '1.1rem';
+        elements.formStatus.style.padding = '1rem';
+        elements.formStatus.style.border = '1px solid #ff6b6b';
+        elements.formStatus.style.borderRadius = '4px';
+        elements.formStatus.style.background = 'rgba(255, 107, 107, 0.1)';
     } finally {
         elements.submitBtn.disabled = false;
         setTimeout(() => {
             renderContent(currentLang);
-        }, 3000);
+            // Clear status message styling
+            elements.formStatus.textContent = '';
+            elements.formStatus.style.cssText = '';
+        }, 5000); // Show message for 5 seconds
     }
 }
