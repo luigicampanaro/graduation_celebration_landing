@@ -31,7 +31,11 @@ const elements = {
     formStatus: document.getElementById('form-status'),
     rsvpForm: document.getElementById('rsvp-form'),
     cursorDot: document.querySelector('.cursor-dot'),
-    cursorCircle: document.querySelector('.cursor-circle')
+    cursorCircle: document.querySelector('.cursor-circle'),
+    modal: document.getElementById('rsvp-modal'),
+    modalMessage: document.getElementById('modal-message'),
+    modalIcon: document.getElementById('modal-icon'),
+    modalClose: document.getElementById('modal-close')
 };
 
 // --- INITIALIZATION ---
@@ -202,6 +206,16 @@ function setupEventListeners() {
     });
 
     elements.rsvpForm.addEventListener('submit', handleFormSubmit);
+
+    // Modal close button
+    elements.modalClose.addEventListener('click', closeModal);
+
+    // Close modal when clicking outside
+    elements.modal.addEventListener('click', (e) => {
+        if (e.target === elements.modal) {
+            closeModal();
+        }
+    });
 }
 
 // --- GOLDEN SNITCH LOGIC ---
@@ -405,31 +419,40 @@ async function handleFormSubmit(e) {
             body: JSON.stringify(data)
         });
 
-        // Success confirmation
+        // Show success modal
         const successMessage = currentLang === 'it'
-            ? '✓ Confermato! La tua partecipazione è stata registrata con successo.'
-            : '✓ Confirmed! Your attendance has been successfully registered.';
+            ? 'Confermato! La tua partecipazione è stata registrata con successo.'
+            : 'Confirmed! Your attendance has been successfully registered.';
 
-        elements.formStatus.textContent = successMessage;
-        elements.formStatus.className = 'form-status success';
-        elements.formStatus.scrollIntoView({ behavior: 'smooth', block: 'center' });
-
+        showModal('success', successMessage);
         elements.rsvpForm.reset();
 
     } catch (error) {
         console.error("Submission error:", error);
         const errorMessage = currentLang === 'it'
-            ? '✗ Errore. Si prega di riprovare.'
-            : '✗ Error. Please try again.';
-        elements.formStatus.textContent = errorMessage;
-        elements.formStatus.className = 'form-status error';
-        elements.formStatus.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            ? 'Errore. Si prega di riprovare.'
+            : 'Error. Please try again.';
+        showModal('error', errorMessage);
     } finally {
         elements.submitBtn.disabled = false;
         setTimeout(() => {
             renderContent(currentLang);
-            elements.formStatus.textContent = '';
-            elements.formStatus.className = 'form-status';
-        }, 6000); // Show message for 6 seconds
+        }, 500);
     }
 }
+
+// Modal functions
+function showModal(type, message) {
+    elements.modalMessage.textContent = message;
+    elements.modalIcon.textContent = type === 'success' ? '✓' : '✗';
+    elements.modalIcon.style.color = type === 'success' ? '#c0a062' : '#ff6b6b';
+    elements.modal.classList.add('show');
+
+    // Auto-close after 5 seconds
+    setTimeout(() => closeModal(), 5000);
+}
+
+function closeModal() {
+    elements.modal.classList.remove('show');
+}
+```
