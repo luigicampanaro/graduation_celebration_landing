@@ -385,7 +385,7 @@ new GoldenSnitch();
 async function handleFormSubmit(e) {
     e.preventDefault();
 
-    if (SHEET_ENDPOINT.includes('$$SECURE')) {
+    if (SHEET_ENDPOINT.includes('PLACEHOLDER')) {
         alert("Please configure the Google Sheet Endpoint in script.js");
         return;
     }
