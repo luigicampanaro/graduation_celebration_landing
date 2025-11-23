@@ -455,4 +455,3 @@ function showModal(type, message) {
 function closeModal() {
     elements.modal.classList.remove('show');
 }
-```
