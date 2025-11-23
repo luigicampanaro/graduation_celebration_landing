@@ -411,15 +411,8 @@ async function handleFormSubmit(e) {
             : '✓ Confirmed! Your attendance has been successfully registered.';
 
         elements.formStatus.textContent = successMessage;
-        elements.formStatus.style.color = '#c0a062';
-        elements.formStatus.style.fontSize = '1.1rem';
-        elements.formStatus.style.fontWeight = '500';
-        elements.formStatus.style.padding = '1.5rem';
-        elements.formStatus.style.marginTop = '2rem';
-        elements.formStatus.style.border = '1px solid #c0a062';
-        elements.formStatus.style.borderRadius = '4px';
-        elements.formStatus.style.background = 'rgba(192, 160, 98, 0.1)';
-        elements.formStatus.style.textAlign = 'center';
+        elements.formStatus.className = 'form-status success';
+        elements.formStatus.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
         elements.rsvpForm.reset();
 
@@ -429,19 +422,14 @@ async function handleFormSubmit(e) {
             ? '✗ Errore. Si prega di riprovare.'
             : '✗ Error. Please try again.';
         elements.formStatus.textContent = errorMessage;
-        elements.formStatus.style.color = '#ff6b6b';
-        elements.formStatus.style.fontSize = '1.1rem';
-        elements.formStatus.style.padding = '1rem';
-        elements.formStatus.style.border = '1px solid #ff6b6b';
-        elements.formStatus.style.borderRadius = '4px';
-        elements.formStatus.style.background = 'rgba(255, 107, 107, 0.1)';
+        elements.formStatus.className = 'form-status error';
+        elements.formStatus.scrollIntoView({ behavior: 'smooth', block: 'center' });
     } finally {
         elements.submitBtn.disabled = false;
         setTimeout(() => {
             renderContent(currentLang);
-            // Clear status message styling
             elements.formStatus.textContent = '';
-            elements.formStatus.style.cssText = '';
-        }, 5000); // Show message for 5 seconds
+            elements.formStatus.className = 'form-status';
+        }, 6000); // Show message for 6 seconds
     }
 }
