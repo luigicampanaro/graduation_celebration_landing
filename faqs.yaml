@@ -1,0 +1,18 @@
+faqs:
+  - id: 1
+    question_en: "What is the dress code?"
+    question_it: "Qual è il dress code?"
+    answer_en: "Black Tie (Formal evening wear). We want this to be an elegant occasion!"
+    answer_it: "Black Tie (Abito da sera formale). Desideriamo che sia un'occasione elegante!"
+
+  - id: 2
+    question_en: "Can I bring a present?"
+    question_it: "Posso portare un regalo?"
+    answer_en: "Absolutely not! Your presence is our greatest gift. Thank you for your support!"
+    answer_it: "Assolutamente no! La vostra presenza è il nostro regalo più grande. Grazie per il vostro supporto!"
+
+  - id: 3
+    question_en: "Will parking be available?"
+    question_it: "C'è disponibilità di parcheggio?"
+    answer_en: "Yes, there is ample free parking available at Njlaya Club."
+    answer_it: "Sì, c'è un ampio parcheggio gratuito disponibile presso il Njlaya Club."

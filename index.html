@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Domenico & Luigi | PhD Graduation</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- JS-YAML Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+</head>
+
+<body>
+    <!-- Noise Overlay -->
+    <div class="noise-overlay"></div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-circle"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="lang-toggle">
+            <button id="lang-it" class="lang-btn active">IT</button>
+            <span class="divider">/</span>
+            <button id="lang-en" class="lang-btn">EN</button>
+        </div>
+    </nav>
+
+    <!-- Smooth Scroll Wrapper -->
+    <div id="scroll-container">
+
+        <!-- Hero Section -->
+        <header class="hero">
+            <div class="hero-grid">
+                <div class="hero-text">
+                    <h1 id="event-title" class="reveal-text">Loading...</h1>
+                    <p id="event-subtitle" class="reveal-text delay-1">Loading...</p>
+                    <div class="cta-wrapper reveal-text delay-2">
+                        <a href="#rsvp" id="hero-cta" class="cta-button">Loading...</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="image-composition">
+                        <div class="img-wrapper parallax" data-speed="0.05">
+                            <img src="asset/editorial_composition.png" alt="Domenico & Luigi Graduation">
+                        </div>
+                        <div class="decorative-circle parallax" data-speed="-0.05"></div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Welcome Section -->
+        <section class="welcome section-padding">
+            <div class="container">
+                <div class="welcome-text-wrapper">
+                    <p id="welcome-message" class="lead-text reveal-text">Loading...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Event Details -->
+        <section class="details section-padding bg-alt">
+            <div class="container">
+                <div class="details-layout">
+                    <div class="detail-block reveal-text">
+                        <span class="label">When</span>
+                        <h3 id="event-date">Loading...</h3>
+                        <p id="event-time">Loading...</p>
+                    </div>
+                    <div class="detail-divider"></div>
+                    <div class="detail-block reveal-text delay-1">
+                        <span class="label">Where</span>
+                        <h3 id="venue-name">Loading...</h3>
+                        <p id="venue-address">Loading...</p>
+                        <a id="venue-map" href="#" target="_blank" class="text-link">View Map</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQs -->
+        <section class="faqs section-padding">
+            <div class="container">
+                <h2 class="section-title reveal-text">FAQ</h2>
+                <div id="faq-list" class="faq-container">
+                    <!-- FAQs injected here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- RSVP Section -->
+        <section id="rsvp" class="rsvp section-padding">
+            <div class="container">
+                <div class="rsvp-wrapper reveal-text">
+                    <h2 id="rsvp-title" class="section-title">RSVP</h2>
+                    <p id="rsvp-deadline" class="rsvp-deadline">Loading...</p>
+
+                    <form id="rsvp-form" class="rsvp-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name" id="label-name">Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="surname" id="label-surname">Surname</label>
+                                <input type="text" id="surname" name="surname" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" id="label-email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-container">
+                                <input type="checkbox" id="plus-one" name="plus_one">
+                                <span class="checkmark"></span>
+                                <span id="label-plus-one">Attending with a Plus One?</span>
+                            </label>
+                        </div>
+
+                        <button type="submit" id="submit-btn" class="submit-button">Send</button>
+                        <p id="form-status" class="form-status"></p>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 Domenico & Luigi Campanaro</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

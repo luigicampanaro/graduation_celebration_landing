@@ -1,0 +1,27 @@
+event:
+  title_en: "PhD Graduation Celebration"
+  title_it: "Festa di Dottorato"
+  subtitle_en: "Join us to celebrate the completion of our PhD studies"
+  subtitle_it: "Unisciti a noi per festeggiare la conclusione dei nostri studi"
+  graduants:
+    - "Domenico Campanaro"
+    - "Luigi Campanaro"
+  
+  welcome_message_en: "We are overjoyed to share this milestone with our family and friends. Your support has been our foundation, and we can't wait to celebrate this night with you."
+  welcome_message_it: "Siamo felicissimi di condividere questo traguardo con la nostra famiglia e i nostri amici. Il vostro supporto è stato fondamentale e non vediamo l'ora di festeggiare questa serata con voi."
+
+venue:
+  name: "Njlaya Club"
+  address: "Via Chico Mendes, 70125 Bari BA, Italia"
+  google_maps_link: "https://share.google/Aw4j01IkH0LHIwQnd"
+
+date_time:
+  date_en: "December 28, 2025"
+  date_it: "28 Dicembre 2025"
+  time: "20:00 - 02:00"
+
+rsvp:
+  cta_en: "Confirm Your Attendance"
+  cta_it: "Conferma la Tua Presenza"
+  deadline_en: "Please RSVP by December 1st"
+  deadline_it: "Si prega di confermare entro il 1° Dicembre"
