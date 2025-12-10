@@ -1,14 +1,14 @@
 event:
-  title_en: "PhD Graduation Celebration"
-  title_it: "Festa di Dottorato"
+  title_en: "PhD Party"
+  title_it: "PhD Party"
   subtitle_en: "Join us to celebrate the completion of our PhD studies"
-  subtitle_it: "Unisciti a noi per festeggiare la conclusione dei nostri studi"
+  subtitle_it: "Unisciti a noi per celebrare il conseguimento del nostro dottorato"
   graduants:
     - "Domenico Campanaro"
     - "Luigi Campanaro"
   
-  welcome_message_en: "We are overjoyed to share this milestone with our family and friends. Your support has been our foundation, and we can't wait to celebrate this night with you."
-  welcome_message_it: "Siamo felicissimi di condividere questo traguardo con la nostra famiglia e i nostri amici. Il vostro supporto è stato fondamentale e non vediamo l'ora di festeggiare questa serata con voi."
+  welcome_message_en: "We are delighted to share this milestone with our family and friends. Thank you for your support; we can't wait to celebrate with you."
+  welcome_message_it: "Siamo felici di condividere questo traguardo con la nostra famiglia ed i nostri amici. Grazie per il vostro supporto, non vediamo l'ora di festeggiare con voi."
 
 venue:
   name: "Njlaya Club"
@@ -23,5 +23,5 @@ date_time:
 rsvp:
   cta_en: "Confirm Your Attendance"
   cta_it: "Conferma la Tua Presenza"
-  deadline_en: "Please RSVP by December 1st"
-  deadline_it: "Si prega di confermare entro il 1° Dicembre"
+  deadline_en: "Please RSVP by December 18th, 2025"
+  deadline_it: "Si prega di confermare entro il 18 Dicembre 2025"
