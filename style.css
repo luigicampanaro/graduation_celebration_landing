@@ -165,6 +165,516 @@ h3 {
     position: relative;
 }
 
+#event-title {
+    font-size: clamp(3rem, 6vw, 7rem);
+    color: var(--color-text);
+    margin-bottom: 2rem;
+}
+
+#event-subtitle {
+    font-size: 1.2rem;
+    color: var(--color-text-muted);
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    margin-bottom: 3rem;
+    max-width: 400px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 0;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 0.9rem;
+    border-bottom: 1px solid var(--color-accent);
+    transition: all 0.3s;
+}
+
+.cta-button:hover {
+    padding-left: 1rem;
+    color: #fff;
+    border-color: #fff;
+}
+
+.image-composition {
+    position: relative;
+    height: 80vh;
+    width: 100%;
+}
+
+.img-wrapper {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    width: 80%;
+    height: 85%;
+    overflow: hidden;
+    filter: grayscale(20%) contrast(105%);
+    transition: filter 0.5s;
+}
+
+.img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+@media (max-width: 1200px) { /* Adjust for larger tablets/small desktops */
+    .hero-grid {
+        grid-template-columns: 1fr 1fr; /* Adjust grid for better balance */
+        gap: 2rem;
+    }
+
+    #event-title {
+        font-size: clamp(3rem, 5vw, 6rem); /* Slightly smaller font for title */
+    }
+
+    #event-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .image-composition {
+        height: 60vh; /* Reduce image height slightly */
+    }
+}
+
+@media (max-width: 768px) { /* Further adjustments for smaller tablets */
+    .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-text {
+        order: 1; /* Text above image on smaller screens */
+    }
+
+    .hero-visual {
+        order: 2;
+    }
+
+    #event-title {
+        font-size: 2.2rem; /* Adjusted for smaller screens */
+        margin-bottom: 0.7rem;
+    }
+
+    #event-subtitle {
+        font-size: 0.9rem; /* Adjusted for smaller screens */
+        margin-bottom: 1.2rem;
+    }
+
+    .cta-button {
+        padding: 0.8rem 0;
+        font-size: 0.8rem;
+    }
+}
+
+
+
+    #event-title {
+        font-size: 1.1rem; /* Further reduced for very small screens */
+        margin-bottom: 0.1rem; /* Adjusted margin */
+        text-align: center;
+    }
+
+    #event-subtitle {
+        font-size: 0.5rem; /* Further reduced for very small screens */
+        margin-bottom: 0.2rem; /* Adjusted margin */
+        line-height: 1.1; /* Adjusted line-height for better text wrapping */
+        text-align: center;
+    }
+
+    .cta-button {
+        padding: 0.3rem 0;
+        font-size: 0.5rem; /* Adjusted for very small screens */
+        text-align: center;
+    }
+
+    .hero-visual {
+        margin-bottom: 0rem; /* No margin for image */
+        height: 0vh; /* Hide image on very small screens */
+        display: none; /* Ensure image is not rendered */
+    }
+
+    .image-composition {
+        height: 0%; /* Ensure image composition takes no height */
+    }
+}
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 1.5rem;
+    }
+
+    .hero-text {
+        order: 2;
+        margin-bottom: 1rem;
+    }
+
+    .hero-visual {
+        order: 1;
+        height: auto;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .image-composition {
+        height: auto;
+        width: 100%;
+        position: relative;
+    }
+
+    .img-wrapper {
+        width: 100%;
+        height: auto;
+        position: static;
+    }
+
+    .img-wrapper img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        display: block;
+    }
+
+    .details-layout {
+        flex-direction: column;
+        gap: 3rem;
+        text-align: center;
+    }
+
+    .detail-divider {
+        display: none;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .cursor-dot,
+    .cursor-circle {
+        display: none;
+    }
+
+    /* Disable custom cursor on touch */
+    * {
+        cursor: auto;
+    }
+
+    #event-title {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        white-space: nowrap; /* Keep title on one line */
+    }
+
+    #event-subtitle {
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 1200px) { /* Adjust for larger tablets/small desktops */
+    .hero-grid {
+        grid-template-columns: 1fr 1fr; /* Adjust grid for better balance */
+        gap: 2rem;
+    }
+
+    #event-title {
+        font-size: clamp(3rem, 5vw, 6rem); /* Slightly smaller font for title */
+    }
+
+    #event-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .image-composition {
+        height: 60vh; /* Reduce image height slightly */
+    }
+}
+
+@media (max-width: 768px) { /* Further adjustments for smaller tablets */
+    .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-text {
+        order: 1; /* Text above image on smaller screens */
+    }
+
+    .hero-visual {
+        order: 2;
+    }
+
+    #event-title {
+        font-size: 2.2rem; /* Adjusted for smaller screens */
+        margin-bottom: 0.7rem;
+    }
+
+    #event-subtitle {
+        font-size: 0.9rem; /* Adjusted for smaller screens */
+        margin-bottom: 1.2rem;
+    }
+
+    .cta-button {
+        padding: 0.8rem 0;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 1rem 1rem; /* Adjusted padding for better spacing */
+        min-height: 100vh; /* Ensure hero section takes full viewport height */
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: left; /* Align text to left */
+        gap: 1rem; /* Reduced gap */
+    }
+
+    .hero-text {
+        order: 2;
+        margin-bottom: 0.5rem; /* Reduced margin */
+    }
+
+    .hero-visual {
+        order: 1;
+        width: 100%;
+        margin-bottom: 0.5rem; /* Reduced margin */
+        display: block; /* Ensure image is displayed */
+        height: auto; /* Allow JS to control height */
+    }
+
+    .image-composition {
+        height: 100%;
+        width: 100%;
+        position: relative;
+    }
+
+    .img-wrapper {
+        width: 100%;
+        height: 100%; /* Ensure image wrapper takes full height */
+        position: static;
+    }
+
+    .img-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: block;
+    }
+
+    #event-title {
+        font-size: 1.6rem; /* Increased for better readability */
+        margin-bottom: 0.5rem;
+        white-space: normal; /* Allow title to wrap */
+        text-align: left; /* Ensure text is left-aligned */
+    }
+
+    #event-subtitle {
+        font-size: 0.8rem; /* Increased for better readability */
+        margin-bottom: 0.8rem;
+        line-height: 1.3;
+        text-align: left; /* Ensure text is left-aligned */
+    }
+
+    .cta-button {
+        padding: 0.7rem 0;
+        font-size: 0.7rem;
+        text-align: left; /* Ensure text is left-aligned */
+    }
+
+    .details-layout {
+        flex-direction: column;
+        gap: 2rem; /* Reduced gap */
+        text-align: center;
+    }
+
+    .detail-divider {
+        display: none;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .cursor-dot,
+    .cursor-circle {
+        display: none;
+    }
+
+    /* Disable custom cursor on touch */
+    * {
+        cursor: auto;
+    }
+}
+
+    #event-title {
+        font-size: 1.6rem; /* Slightly smaller for very small screens */
+        margin-bottom: 0.4rem; /* Reduced margin */
+    }
+
+    #event-subtitle {
+        font-size: 0.75rem; /* Slightly smaller for very small screens */
+        margin-bottom: 0.6rem; /* Reduced margin */
+    }
+
+    .cta-button {
+        padding: 0.6rem 0;
+        font-size: 0.65rem;
+    }
+
+.hero-visual {
+        margin-bottom: 0.1rem;
+        height: 10vh; /* Drastically reduced image height for maximum text visibility */
+    }
+
+    .image-composition {
+        height: 100%; /* Make image composition take full height of its parent */
+    }
+}
+
+#event-title {
+        font-size: 1.1rem; /* Further reduced for very small screens */
+        margin-bottom: 0.1rem; /* Adjusted margin */
+        text-align: center;
+    }
+
+    #event-subtitle {
+        font-size: 0.5rem; /* Further reduced for very small screens */
+        margin-bottom: 0.2rem; /* Adjusted margin */
+        line-height: 1.1; /* Adjusted line-height for better text wrapping */
+        text-align: center;
+    }
+
+    .cta-button {
+        padding: 0.3rem 0;
+        font-size: 0.5rem; /* Adjusted for very small screens */
+        text-align: center;
+    }
+
+    #event-subtitle {
+        font-size: 0.7rem; /* Further reduced for very small screens */
+        margin-bottom: 0.6rem; /* Adjusted margin */
+        line-height: 1.2; /* Adjusted line-height for better text wrapping */
+    }
+
+    .cta-button {
+        padding: 0.7rem 0;
+        font-size: 0.7rem; /* Adjusted for very small screens */
+    }
+
+    #event-subtitle {
+        font-size: 0.8rem; /* Adjusted for mobile */
+        margin-bottom: 0.8rem; /* Reduced margin */
+    }
+
+    .cta-button {
+        padding: 0.7rem 0;
+        font-size: 0.7rem;
+    }
+
+    .hero-visual {
+        margin-bottom: 0.5rem; /* Reduced margin for image */
+        height: 25vh; /* Even further reduced image height on very small screens */
+    }
+
+    .image-composition {
+        height: 100%; /* Make image composition take full height of its parent */
+    }
+}
+
+    #event-title {
+        font-size: 2rem;
+    }
+
+    #event-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .cta-button {
+        padding: 0.7rem 0;
+        font-size: 0.7rem;
+    }
+}
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 1.5rem;
+    }
+
+    .hero-text {
+        order: 2;
+        margin-bottom: 1rem;
+    }
+
+    .hero-visual {
+        order: 1;
+        height: auto;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .image-composition {
+        height: auto;
+        width: 100%;
+        position: relative;
+    }
+
+    .img-wrapper {
+        width: 100%;
+        height: auto;
+        position: static;
+    }
+
+    .img-wrapper img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        display: block;
+    }
+
+    .details-layout {
+        flex-direction: column;
+        gap: 3rem;
+        text-align: center;
+    }
+
+    .detail-divider {
+        display: none;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .cursor-dot,
+00741|     .cursor-circle {
+00742|         display: none;
+00743|     }
+00744| 
+00745|     /* Disable custom cursor on touch */
+00746|     * {
+00747|         cursor: auto;
+00748|     }
+00749| 
+00750|     #event-title {
+00751|         font-size: 3rem;
+00752|         margin-bottom: 1rem;
+00753|     }
+00754| 
+00755|     #event-subtitle {
+00756|         margin-bottom: 2rem;
+00757|     }
+00758| }
+
 .container {
     width: 90%;
     max-width: var(--container-width);
@@ -673,58 +1183,74 @@ h3 {
 }
 
 /* --- Responsive --- */
-@media (max-width: 900px) {
-    .container {
-        padding: 0 1.5rem;
-    }
-
+@media (max-width: 480px) {
     .hero {
-        padding-top: 80px;
-        align-items: flex-start;
-        min-height: auto;
-        padding-bottom: 2rem;
+        padding: 1rem 1rem; /* Adjusted padding for better spacing */
+        min-height: 100vh; /* Ensure hero section takes full viewport height */
     }
 
     .hero-grid {
+        display: grid;
         grid-template-columns: 1fr;
-        text-align: center;
-        gap: 1.5rem;
+        text-align: left; /* Align text to left */
+        gap: 1rem; /* Reduced gap */
     }
 
     .hero-text {
         order: 2;
-        margin-bottom: 1rem;
+        margin-bottom: 0.5rem; /* Reduced margin */
     }
 
     .hero-visual {
         order: 1;
-        height: auto;
         width: 100%;
-        margin-bottom: 1rem;
+        margin-bottom: 0.5rem; /* Reduced margin */
+        display: block; /* Ensure image is displayed */
+        height: auto; /* Allow JS to control height */
     }
 
     .image-composition {
-        height: auto;
+        height: 100%;
         width: 100%;
         position: relative;
     }
 
     .img-wrapper {
         width: 100%;
-        height: auto;
+        height: 100%; /* Ensure image wrapper takes full height */
         position: static;
     }
 
     .img-wrapper img {
         width: 100%;
-        height: auto;
+        height: 100%;
         object-fit: contain;
         display: block;
     }
 
+    #event-title {
+        font-size: 1.6rem; /* Increased for better readability */
+        margin-bottom: 0.5rem;
+        white-space: normal; /* Allow title to wrap */
+        text-align: left; /* Ensure text is left-aligned */
+    }
+
+    #event-subtitle {
+        font-size: 0.8rem; /* Increased for better readability */
+        margin-bottom: 0.8rem;
+        line-height: 1.3;
+        text-align: left; /* Ensure text is left-aligned */
+    }
+
+    .cta-button {
+        padding: 0.7rem 0;
+        font-size: 0.7rem;
+        text-align: left; /* Ensure text is left-aligned */
+    }
+
     .details-layout {
         flex-direction: column;
-        gap: 3rem;
+        gap: 2rem; /* Reduced gap */
         text-align: center;
     }
 
@@ -746,13 +1272,169 @@ h3 {
     * {
         cursor: auto;
     }
+}
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: left; /* Align text to left */
+        gap: 1rem; /* Reduced gap */
+    }
+
+    .hero-text {
+        order: 2;
+        margin-bottom: 0.5rem; /* Reduced margin */
+    }
+
+.hero-visual {
+        order: 1;
+        height: 69vh; /* Calculated optimal height */
+        width: 100%;
+        margin-bottom: 0.5rem; /* Reduced margin */
+        display: block; /* Ensure image is displayed */
+    }
+
+    .image-composition {
+        height: 100%;
+        width: 100%;
+        position: relative;
+    }
+
+    .img-wrapper {
+        width: 100%;
+        height: 100%; /* Ensure image wrapper takes full height */
+        position: static;
+    }
+
+    .img-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: block;
+    }
 
     #event-title {
-        font-size: 3rem;
-        margin-bottom: 1rem;
+        font-size: 1.4rem; /* Adjusted for better readability */
+        margin-bottom: 0.5rem;
+        white-space: normal; /* Allow title to wrap */
+        text-align: left; /* Ensure text is left-aligned */
     }
 
     #event-subtitle {
-        margin-bottom: 2rem;
+        font-size: 0.7rem; /* Adjusted for better readability */
+        margin-bottom: 0.8rem;
+        line-height: 1.3;
+        text-align: left; /* Ensure text is left-aligned */
+    }
+
+    .cta-button {
+        padding: 0.7rem 0;
+        font-size: 0.7rem;
+        text-align: left; /* Ensure text is left-aligned */
+    }
+
+    .details-layout {
+        flex-direction: column;
+        gap: 2rem; /* Reduced gap */
+        text-align: center;
+    }
+
+    .detail-divider {
+        display: none;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .cursor-dot,
+    .cursor-circle {
+        display: none;
+    }
+
+    /* Disable custom cursor on touch */
+    * {
+        cursor: auto;
+    }
+}
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: left; /* Align text to left */
+        gap: 1rem; /* Reduced gap */
+    }
+
+    .hero-text {
+        order: 2;
+        margin-bottom: 0.5rem; /* Reduced margin */
+    }
+
+    .hero-visual {
+        order: 1;
+        height: 30vh; /* Increased height for the image */
+        width: 100%;
+        margin-bottom: 0.5rem; /* Reduced margin */
+        display: block; /* Ensure image is displayed */
+    }
+
+    .image-composition {
+        height: 100%;
+        width: 100%;
+        position: relative;
+    }
+
+    .img-wrapper {
+        width: 100%;
+        height: 100%; /* Ensure image wrapper takes full height */
+        position: static;
+    }
+
+    .img-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: block;
+    }
+
+    #event-title {
+        font-size: 1.4rem; /* Adjusted for better readability */
+        margin-bottom: 0.5rem;
+        white-space: normal; /* Allow title to wrap */
+    }
+
+    #event-subtitle {
+        font-size: 0.7rem; /* Adjusted for better readability */
+        margin-bottom: 0.8rem;
+        line-height: 1.3;
+    }
+
+    .cta-button {
+        padding: 0.7rem 0;
+        font-size: 0.7rem;
+    }
+
+    .details-layout {
+        flex-direction: column;
+        gap: 2rem; /* Reduced gap */
+        text-align: center;
+    }
+
+    .detail-divider {
+        display: none;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .cursor-dot,
+    .cursor-circle {
+        display: none;
+    }
+
+    /* Disable custom cursor on touch */
+    * {
+        cursor: auto;
     }
 }

@@ -38,6 +38,38 @@ const elements = {
     modalClose: document.getElementById('modal-close')
 };
 
+function adjustHeroVisualHeight() {
+    const hero = document.querySelector('.hero');
+    const heroText = document.querySelector('.hero-text');
+    const heroVisual = document.querySelector('.hero-visual');
+    const navbar = document.querySelector('.navbar');
+
+    if (!hero || !heroText || !heroVisual || !navbar) return;
+
+    const windowHeight = window.innerHeight;
+
+    const navbarHeight = navbar.offsetHeight;
+    const heroTextHeight = heroText.offsetHeight;
+
+    const heroStyle = window.getComputedStyle(hero);
+    const heroPaddingTop = parseFloat(heroStyle.paddingTop);
+    const heroPaddingBottom = parseFloat(heroStyle.paddingBottom);
+
+    // Calculate available space for the image
+    // This is the total viewport height minus the navbar, text content, and hero paddings
+    let availableHeight = windowHeight - navbarHeight - heroTextHeight - heroPaddingTop - heroPaddingBottom;
+
+    // Ensure a minimum image height, but prioritize text visibility
+    const minImageHeight = 100; // Minimum 100px for the image
+
+    let newImageHeight = Math.max(minImageHeight, availableHeight);
+
+    // Apply the new height, ensuring it's not negative
+    heroVisual.style.height = `${Math.max(0, newImageHeight)}px`;
+
+    // Ensure text elements are always visible by allowing wrapping (already handled in CSS for mobile)
+}
+
 // --- INITIALIZATION ---
 document.addEventListener('DOMContentLoaded', async () => {
     try {
@@ -45,10 +77,14 @@ document.addEventListener('DOMContentLoaded', async () => {
         setupEventListeners();
         setupAnimations();
         renderContent(currentLang);
+        adjustHeroVisualHeight(); // Call after initial render
     } catch (error) {
         console.error("Initialization failed:", error);
     }
 });
+
+// Call on resize
+window.addEventListener('resize', adjustHeroVisualHeight);
 
 // --- DATA LOADING ---
 async function loadData() {
@@ -123,7 +159,7 @@ function renderContent(lang) {
     elements.btnEN.classList.toggle('active', lang === 'en');
 
     // Text Content
-    elements.eventTitle.innerHTML = configData.event[`title_${lang}`].replace(/ /g, "<br>"); // Break title lines
+    elements.eventTitle.textContent = configData.event[`title_${lang}`]; // Ensure title is on one line
     elements.eventSubtitle.textContent = configData.event[`subtitle_${lang}`];
     elements.heroCTA.textContent = configData.rsvp[`cta_${lang}`];
     elements.welcomeMessage.textContent = configData.event[`welcome_message_${lang}`];
