@@ -182,6 +182,13 @@ h3 {
     margin: 0 auto;
 }
 
+.hero-text {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 #event-title {
     font-size: clamp(3rem, 6vw, 7rem);
     color: var(--color-text);
@@ -199,17 +206,24 @@ h3 {
 
 .cta-button {
     display: inline-block;
-    padding: 1rem 0;
+    padding: 1rem 0 5px 0; /* Adjusted: slightly more space than 2px, but still tight */
     color: var(--color-accent);
     text-transform: uppercase;
     letter-spacing: 0.2em;
     font-size: 0.9rem;
+    text-decoration: none !important;
     border-bottom: 1px solid var(--color-accent);
+    border-top: none; /* Explicitly prevent top border */
+    border-left: none;
+    border-right: none;
     transition: all 0.3s;
+    line-height: 1.2;
+    white-space: nowrap;
 }
 
 .cta-button:hover {
     padding-left: 1rem;
+    padding-right: 1rem; /* Balanced hover effect */
     color: #fff;
     border-color: #fff;
 }
@@ -281,6 +295,7 @@ h3 {
 .detail-block {
     flex: 1;
     padding: 0 2rem;
+    text-align: center;
 }
 
 .detail-divider {
@@ -679,48 +694,129 @@ h3 {
     }
 
     .hero {
-        padding-top: 80px;
-        align-items: flex-start;
-        min-height: auto;
-        padding-bottom: 2rem;
+        padding-top: 100px;
+        align-items: center;
+        min-height: auto; /* Remove forced full height to reduce gap */
+        padding-bottom: 5rem; /* Space at bottom */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
     }
 
     .hero-grid {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         text-align: center;
-        gap: 1.5rem;
+        gap: 0.5rem;
+        height: auto; /* Allow height to fit content */
+        width: 100%;
     }
 
     .hero-text {
         order: 2;
-        margin-bottom: 1rem;
+        margin-bottom: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start; /* Stack content at the top */
+        align-items: center;
+        flex-grow: 0; /* Don't expand to fill space */
+        width: 100%;
+        text-align: center;
+        margin-top: 2rem; /* Gap from image */
     }
 
     .hero-visual {
         order: 1;
-        height: auto;
+        height: 42vh; /* Balanced height */
+        max-height: 500px;
+        min-height: 300px; /* Ensure it doesn't get too small */
         width: 100%;
-        margin-bottom: 1rem;
+        margin-bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #event-title {
+        font-size: clamp(3rem, 15vw, 5rem);
+        margin-bottom: 0.5rem;
+        white-space: nowrap;
+        width: auto;
+        max-width: 100%;
+        line-height: 1.1;
+        font-weight: 400; /* Increased weight for better mobile legibility */
+    }
+
+    #event-subtitle {
+        margin-bottom: 2rem;
+        font-size: clamp(1rem, 5vw, 1.4rem);
+        padding: 0 1rem;
+        max-width: 90%;
+        line-height: 1.4;
+        color: #d0d0d0; /* Brighter for mobile contrast */
+    }
+
+    #event-subtitle {
+        margin-bottom: 2rem;
+        font-size: clamp(1rem, 5vw, 1.4rem); /* More readable subtitle */
+        padding: 0 1rem;
+        max-width: 90%;
+        line-height: 1.4;
+    }
+
+    .cta-button {
+        font-size: clamp(1rem, 4vw, 1.2rem); /* Stronger CTA */
+        padding: 0.8rem 0 4px 0; /* Refined padding */
     }
 
     .image-composition {
-        height: auto;
+        height: 100%;
         width: 100%;
-        position: relative;
     }
 
     .img-wrapper {
         width: 100%;
-        height: auto;
+        height: 100%;
         position: static;
     }
 
     .img-wrapper img {
         width: 100%;
-        height: auto;
+        height: 100%;
         object-fit: contain;
         display: block;
     }
+
+    /* Disable custom cursor on touch */
+    * {
+        cursor: auto;
+    }
+
+    #event-title {
+        font-size: clamp(1.8rem, 10vw, 3rem); /* Fluid scaling for mobile */
+        margin-bottom: 0.25rem;
+        white-space: nowrap;
+        width: auto;
+        max-width: 100%;
+        line-height: 1.2;
+    }
+
+    #event-subtitle {
+        margin-bottom: 1rem;
+        font-size: clamp(0.8rem, 4vw, 1rem); /* Fluid scaling */
+        padding: 0 1rem;
+    }
+
+    .cta-button {
+        font-size: clamp(0.75rem, 3.5vw, 0.9rem); /* Fluid scaling */
+    }
+
+    .welcome {
+        min-height: auto; /* Reduce excessive height */
+        padding: 3rem 0; /* Adjust padding */
+    }
+
 
     .details-layout {
         flex-direction: column;
@@ -740,19 +836,5 @@ h3 {
     .cursor-dot,
     .cursor-circle {
         display: none;
-    }
-
-    /* Disable custom cursor on touch */
-    * {
-        cursor: auto;
-    }
-
-    #event-title {
-        font-size: 3rem;
-        margin-bottom: 1rem;
-    }
-
-    #event-subtitle {
-        margin-bottom: 2rem;
     }
 }
