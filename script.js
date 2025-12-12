@@ -123,7 +123,7 @@ function renderContent(lang) {
     elements.btnEN.classList.toggle('active', lang === 'en');
 
     // Text Content
-    elements.eventTitle.innerHTML = configData.event[`title_${lang}`].replace(/ /g, "<br>"); // Break title lines
+    elements.eventTitle.innerHTML = configData.event[`title_${lang}`];
     elements.eventSubtitle.textContent = configData.event[`subtitle_${lang}`];
     elements.heroCTA.textContent = configData.rsvp[`cta_${lang}`];
     elements.welcomeMessage.textContent = configData.event[`welcome_message_${lang}`];
