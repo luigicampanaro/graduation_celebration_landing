@@ -422,6 +422,76 @@ h3 {
     border-color: var(--color-accent);
 }
 
+/* --- Custom Checkbox --- */
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-left: 35px;
+    cursor: pointer;
+    font-size: 0.9rem; /* Slightly larger for readability */
+    color: var(--color-text-muted);
+    user-select: none;
+    min-height: 25px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 20px;
+    width: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+    transition: all 0.3s;
+}
+
+.checkbox-container:hover input ~ .checkmark {
+    border-color: var(--color-accent);
+}
+
+.checkbox-container input:checked ~ .checkmark {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.checkbox-container .checkmark:after {
+    left: 7px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid var(--color-bg);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
 .submit-button {
     width: 100%;
     padding: 1.5rem;

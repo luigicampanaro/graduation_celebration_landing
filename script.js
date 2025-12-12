@@ -138,8 +138,6 @@ function renderContent(lang) {
 
     elements.rsvpDeadline.textContent = configData.rsvp[`deadline_${lang}`];
     elements.labelName.textContent = lang === 'it' ? 'Nome' : 'Name';
-    elements.labelSurname.textContent = lang === 'it' ? 'Cognome' : 'Surname';
-    elements.labelEmail.textContent = 'Email';
     elements.labelPlusOne.textContent = lang === 'it' ? 'Accompagnatore?' : 'Plus One?';
     elements.submitBtn.textContent = lang === 'it' ? 'Invia' : 'Send';
 }
