@@ -24,8 +24,6 @@ const elements = {
     rsvpTitle: document.getElementById('rsvp-title'),
     rsvpDeadline: document.getElementById('rsvp-deadline'),
     labelName: document.getElementById('label-name'),
-    labelSurname: document.getElementById('label-surname'),
-    labelEmail: document.getElementById('label-email'),
     labelPlusOne: document.getElementById('label-plus-one'),
     submitBtn: document.getElementById('submit-btn'),
     formStatus: document.getElementById('form-status'),
