@@ -24,8 +24,6 @@ const elements = {
     rsvpTitle: document.getElementById('rsvp-title'),
     rsvpDeadline: document.getElementById('rsvp-deadline'),
     labelName: document.getElementById('label-name'),
-    labelSurname: document.getElementById('label-surname'),
-    labelEmail: document.getElementById('label-email'),
     labelPlusOne: document.getElementById('label-plus-one'),
     submitBtn: document.getElementById('submit-btn'),
     formStatus: document.getElementById('form-status'),
@@ -138,8 +136,6 @@ function renderContent(lang) {
 
     elements.rsvpDeadline.textContent = configData.rsvp[`deadline_${lang}`];
     elements.labelName.textContent = lang === 'it' ? 'Nome' : 'Name';
-    elements.labelSurname.textContent = lang === 'it' ? 'Cognome' : 'Surname';
-    elements.labelEmail.textContent = 'Email';
     elements.labelPlusOne.textContent = lang === 'it' ? 'Accompagnatore?' : 'Plus One?';
     elements.submitBtn.textContent = lang === 'it' ? 'Invia' : 'Send';
 }
