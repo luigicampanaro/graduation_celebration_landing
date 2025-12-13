@@ -2,17 +2,23 @@ faqs:
   - id: 1
     question_en: "What is the dress code?"
     question_it: "Qual è il dress code?"
+    question_ba: "Com m'agghia vestì?"
     answer_en: "Black Tie (dark suit for men, long gown for women). We wish for this to be an elegant occasion!"
     answer_it: "Black Tie (abito scuro per gli uomini, vestito elegante per le donne). Desideriamo che sia un'occasione elegante!"
+    answer_ba: "Black Tie (abito scuro p l'uom, vestito elegante p l femmn). Vulim fa na cos bell!"
 
   - id: 2
     question_en: "Can I bring a present?"
     question_it: "Posso portare un regalo?"
+    question_ba: "Pozz portà nu regal?"
     answer_en: "Your presence is our greatest gift. Thank you for your support!"
     answer_it: "La vostra presenza è il nostro regalo più grande. Grazie per il vostro supporto!"
+    answer_ba: "La vostr presenz è u regal chiù bell. Grazie assai!"
 
   - id: 3
     question_en: "Will parking be available?"
     question_it: "C'è disponibilità di parcheggio?"
+    question_ba: "Stà u parchegg?"
     answer_en: "Yes, ample parking is available at the Njlaya Club. Should the main parking lot be full, guests may park on Via Chico Mendes (which provides access to the Club entrance)."
     answer_it: "Sì, è disponibile un ampio parcheggio presso il Njlaya Club. Se il parcheggio principale dovesse essere pieno, gli ospiti possono parcheggiare in Via Chico Mendes (che conduce all'ingresso del Club)."
+    answer_ba: "Sì, stà nu sacc d post o Njlaya. C s'engh, putit metter a maghin en via Chico Mendes."

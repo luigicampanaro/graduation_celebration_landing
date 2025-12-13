@@ -11,6 +11,7 @@ let faqData = null;
 const elements = {
     btnIT: document.getElementById('lang-it'),
     btnEN: document.getElementById('lang-en'),
+    btnBA: document.getElementById('lang-ba'),
     eventTitle: document.getElementById('event-title'),
     eventSubtitle: document.getElementById('event-subtitle'),
     heroCTA: document.getElementById('hero-cta'),
@@ -115,10 +116,15 @@ function setupAnimations() {
 
 // --- RENDERING ---
 function renderContent(lang) {
-    if (!configData || !faqData) return;
+    console.log("Rendering content for lang:", lang);
+    if (!configData || !faqData) {
+        console.error("Data not loaded yet");
+        return;
+    }
 
     elements.btnIT.classList.toggle('active', lang === 'it');
     elements.btnEN.classList.toggle('active', lang === 'en');
+    elements.btnBA.classList.toggle('active', lang === 'ba');
 
     // Text Content
     elements.eventTitle.innerHTML = configData.event[`title_${lang}`];
@@ -135,9 +141,21 @@ function renderContent(lang) {
     renderFAQs(lang);
 
     elements.rsvpDeadline.textContent = configData.rsvp[`deadline_${lang}`];
-    elements.labelName.textContent = lang === 'it' ? 'Nome' : 'Name';
-    elements.labelPlusOne.textContent = lang === 'it' ? 'Accompagnatore?' : 'Plus One?';
-    elements.submitBtn.textContent = lang === 'it' ? 'Invia' : 'Send';
+    
+    // Labels
+    if (lang === 'it') {
+        elements.labelName.textContent = 'Nome';
+        elements.labelPlusOne.textContent = 'Accompagnatore?';
+        elements.submitBtn.textContent = 'Invia';
+    } else if (lang === 'ba') {
+        elements.labelName.textContent = 'Nom';
+        elements.labelPlusOne.textContent = 'Port qualcun?';
+        elements.submitBtn.textContent = 'Mann';
+    } else {
+        elements.labelName.textContent = 'Name';
+        elements.labelPlusOne.textContent = 'Plus One?';
+        elements.submitBtn.textContent = 'Send';
+    }
 }
 
 function renderFAQs(lang) {
@@ -199,6 +217,11 @@ function setupEventListeners() {
     elements.btnEN.addEventListener('click', () => {
         currentLang = 'en';
         renderContent('en');
+    });
+
+    elements.btnBA.addEventListener('click', () => {
+        currentLang = 'ba';
+        renderContent('ba');
     });
 
     elements.rsvpForm.addEventListener('submit', handleFormSubmit);
@@ -416,18 +439,28 @@ async function handleFormSubmit(e) {
         });
 
         // Show success modal
-        const successMessage = currentLang === 'it'
-            ? 'Confermato! La tua partecipazione è stata registrata con successo.'
-            : 'Confirmed! Your attendance has been successfully registered.';
+        let successMessage;
+        if (currentLang === 'it') {
+            successMessage = 'Confermato! La tua partecipazione è stata registrata con successo.';
+        } else if (currentLang === 'ba') {
+            successMessage = 'Appost! T\'am signat.';
+        } else {
+            successMessage = 'Confirmed! Your attendance has been successfully registered.';
+        }
 
         showModal('success', successMessage);
         elements.rsvpForm.reset();
 
     } catch (error) {
         console.error("Submission error:", error);
-        const errorMessage = currentLang === 'it'
-            ? 'Errore. Si prega di riprovare.'
-            : 'Error. Please try again.';
+        let errorMessage;
+        if (currentLang === 'it') {
+            errorMessage = 'Errore. Si prega di riprovare.';
+        } else if (currentLang === 'ba') {
+            errorMessage = 'Non ha funziunat. Pruev arier.';
+        } else {
+            errorMessage = 'Error. Please try again.';
+        }
         showModal('error', errorMessage);
     } finally {
         elements.submitBtn.disabled = false;
