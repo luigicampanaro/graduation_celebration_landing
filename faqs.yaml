@@ -7,9 +7,9 @@ faqs:
 
   - id: 2
     question_en: "Can I bring a present?"
-    question_it: "Posso portare un regalo?"
-    answer_en: "Your presence is our greatest gift. Thank you for your support!"
-    answer_it: "La vostra presenza è il nostro regalo più grande. Grazie per il vostro supporto!"
+    question_it: "C’è una lista regalo?"
+    answer_en: "No. Your presence is our greatest gift. Thank you for your support!"
+    answer_it: "No. La vostra presenza è il regalo più grande."
 
   - id: 3
     question_en: "Will parking be available?"
