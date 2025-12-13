@@ -2,14 +2,14 @@ faqs:
   - id: 1
     question_en: "What is the dress code?"
     question_it: "Qual è il dress code?"
-    answer_en: "Black Tie (formal dark suit for men, long gown for women). We wish for this to be an elegant occasion!"
-    answer_it: "Black Tie (abito scuro formale per gli uomini, vestito elegante per le donne). Desideriamo che sia un'occasione elegante!"
+    answer_en: "Black Tie (dark suit for men, long gown for women). We wish for this to be an elegant occasion!"
+    answer_it: "Black Tie (abito scuro per gli uomini, vestito elegante per le donne). Desideriamo che sia un'occasione elegante!"
 
   - id: 2
     question_en: "Can I bring a present?"
     question_it: "Posso portare un regalo?"
-    answer_en: "Absolutely not! Your presence is our greatest gift. Thank you for your support!"
-    answer_it: "Assolutamente no! La vostra presenza è il nostro regalo più grande. Grazie per il vostro supporto!"
+    answer_en: "Your presence is our greatest gift. Thank you for your support!"
+    answer_it: "La vostra presenza è il nostro regalo più grande. Grazie per il vostro supporto!"
 
   - id: 3
     question_en: "Will parking be available?"
