@@ -18,10 +18,10 @@ venue:
 date_time:
   date_en: "December 28, 2025"
   date_it: "28 Dicembre 2025"
-  time: "20:00 - 02:00"
+  time: "20:30"
 
 rsvp:
   cta_en: "Confirm Your Attendance"
   cta_it: "Conferma la Tua Presenza"
-  deadline_en: "Please RSVP by December 18th, 2025"
-  deadline_it: "Si prega di confermare entro il 18 Dicembre 2025"
+  deadline_en: "Please RSVP by December 20th, 2025"
+  deadline_it: "Si prega di confermare entro il 20 Dicembre 2025"
